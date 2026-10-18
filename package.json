@@ -1,0 +1,25 @@
+{
+  "name": "bloom-petal-github",
+  "version": "1.0.0",
+  "description": "Welcome to **Bloom & Petal**, a beginner-friendly flower shop website created with HTML, CSS, and JavaScript. This repository is specifically structured as the baseline application for learning DevOps practices step by step.",
+  "main": "script.js",
+  "scripts": {
+    "lint": "npx htmlhint index.html",
+    "build": "mkdir -p dist && cp index.html styles.css script.js dist/",
+    "test": "echo \"No tests configured yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahabat4247-dot/bloom-petal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahabat4247-dot/bloom-petal/issues"
+  },
+  "homepage": "https://github.com/mahabat4247-dot/bloom-petal#readme",
+  "devDependencies": {
+    "htmlhint": "^1.9.2"
+  }
+}
