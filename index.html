@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata section containing document configurations, title, and stylesheets -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Petal | Fresh Flower Shop</title>
+    <!-- Linking external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🌸</span> Bloom & Petal
+            </a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#bouquets">Bouquets</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="cart-summary" id="cartSummary">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count" id="cartCount">0</span> items
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Handcrafted Elegance for Every Moment</h1>
+            <p>Fresh, beautifully arranged flowers delivered directly to your doorstep with love and care.</p>
+            <a href="#bouquets" class="btn btn-primary">Shop Bouquets</a>
+        </div>
+    </section>
+
+    <!-- Category Filter Controls -->
+    <section class="container filter-container">
+        <h2>Our Bouquet Collection</h2>
+        <p class="section-subtitle">Select a category to filter our handcrafted floral arrangements</p>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All Bouquets</button>
+            <button class="filter-btn" data-category="roses">Roses</button>
+            <button class="filter-btn" data-category="tulips">Tulips</button>
+            <button class="filter-btn" data-category="lilies">Lilies</button>
+            <button class="filter-btn" data-category="mixed">Mixed</button>
+        </div>
+    </section>
+
+    <!-- Bouquet Cards Section -->
+    <section id="bouquets" class="container bouquet-grid">
+        <!-- Bouquet Card 1 -->
+        <div class="card" data-category="roses">
+            <div class="card-badge">Bestseller</div>
+            <div class="card-img-wrapper">
+                <span class="flower-emoji">🌹</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Roses</span>
+                <h3 class="card-title">Velvet Red Roses</h3>
+                <p class="card-desc">A classic arrangement of twelve premium long-stem red roses symbolizing deep passion.</p>
+                <div class="card-footer">
+                    <span class="card-price">$45.00</span>
+                    <button class="btn btn-sm add-to-cart" data-name="Velvet Red Roses" data-price="45.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouquet Card 2 -->
+        <div class="card" data-category="tulips">
+            <div class="card-badge">Seasonal</div>
+            <div class="card-img-wrapper">
+                <span class="flower-emoji">🌷</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Tulips</span>
+                <h3 class="card-title">Spring Sunlight Tulips</h3>
+                <p class="card-desc">Vibrant yellow and soft pastel pink tulips that bring warmth and joy to any room.</p>
+                <div class="card-footer">
+                    <span class="card-price">$38.00</span>
+                    <button class="btn btn-sm add-to-cart" data-name="Spring Sunlight Tulips" data-price="38.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouquet Card 3 -->
+        <div class="card" data-category="lilies">
+            <div class="card-img-wrapper">
+                <span class="flower-emoji">🌺</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Lilies</span>
+                <h3 class="card-title">Royal Stargazer Lilies</h3>
+                <p class="card-desc">Fragrant pink stargazers blended with delicate baby's breath for pure elegance.</p>
+                <div class="card-footer">
+                    <span class="card-price">$52.00</span>
+                    <button class="btn btn-sm add-to-cart" data-name="Royal Stargazer Lilies" data-price="52.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouquet Card 4 -->
+        <div class="card" data-category="mixed">
+            <div class="card-badge">Popular</div>
+            <div class="card-img-wrapper">
+                <span class="flower-emoji">🌻</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Mixed</span>
+                <h3 class="card-title">Golden Harvest Meadow</h3>
+                <p class="card-desc">Cheerful sunflowers mixed with wild lavender and eucalyptus leaves.</p>
+                <div class="card-footer">
+                    <span class="card-price">$42.00</span>
+                    <button class="btn btn-sm add-to-cart" data-name="Golden Harvest Meadow" data-price="42.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouquet Card 5 -->
+        <div class="card" data-category="roses">
+            <div class="card-img-wrapper">
+                <span class="flower-emoji">🌸</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Roses</span>
+                <h3 class="card-title">Blush Pink Romance</h3>
+                <p class="card-desc">Soft blush garden roses hand-wrapped in eco-friendly kraft paper with satin ribbon.</p>
+                <div class="card-footer">
+                    <span class="card-price">$48.00</span>
+                    <button class="btn btn-sm add-to-cart" data-name="Blush Pink Romance" data-price="48.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouquet Card 6 -->
+        <div class="card" data-category="mixed">
+            <div class="card-img-wrapper">
+                <span class="flower-emoji">💐</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Mixed</span>
+                <h3 class="card-title">Pastel Celebration</h3>
+                <p class="card-desc">A festive mix of hydrangeas, carnations, and daisies in soothing pastel colors.</p>
+                <div class="card-footer">
+                    <span class="card-price">$55.00</span>
+                    <button class="btn btn-sm add-to-cart" data-name="Pastel Celebration" data-price="55.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>About Bloom & Petal</h2>
+                <p>Founded with a deep love for nature and design, Bloom & Petal is dedicated to bringing fresh, eco-friendly floral creations to our community.</p>
+                <p>Every arrangement is carefully hand-crafted by master florists using locally sourced flowers whenever possible.</p>
+                <div class="features-list">
+                    <div class="feature-item">🌿 100% Eco-Friendly Sourcing</div>
+                    <div class="feature-item">🚀 Same-Day Local Delivery</div>
+                    <div class="feature-item">💧 7-Day Freshness Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Store Info Section -->
+    <section id="contact" class="container contact-section">
+        <h2>Contact Us</h2>
+        <p class="section-subtitle">Have questions or want a custom arrangement? Get in touch with our team!</p>
+
+        <div class="contact-grid">
+            <!-- Contact Information Box -->
+            <div class="contact-info">
+                <h3>Store Details</h3>
+                <div class="info-item">
+                    <strong>📍 Location:</strong>
+                    <p>123 Blossom Lane, Petal City, PC 56789</p>
+                </div>
+                <div class="info-item">
+                    <strong>📞 Phone:</strong>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="info-item">
+                    <strong>✉️ Email:</strong>
+                    <p>hello@bloomandpetal.com</p>
+                </div>
+                <div class="info-item">
+                    <strong>⏰ Hours:</strong>
+                    <p>Mon - Sat: 8:00 AM - 7:00 PM<br>Sun: 9:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" id="contactForm">
+                <h3>Send Us a Message</h3>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="formSuccess" class="form-status success-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 Bloom & Petal. All rights reserved.</p>
+            <p class="devops-note">Built for DevOps learning lab demonstration.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

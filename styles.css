@@ -1,0 +1,473 @@
+/* ==========================================================================
+   Bloom & Petal - Flower Shop Stylesheet
+   Designed for beginner DevOps learning & simple responsive layout.
+   ========================================================================== */
+
+/* --- CSS Variables & Color Palette --- */
+:root {
+    --primary-color: #d87093;       /* Pale Violet Red / Rose */
+    --primary-hover: #c45b7f;       /* Darker Rose */
+    --secondary-color: #2e5a44;     /* Sage / Forest Green */
+    --accent-color: #f7a8b8;        /* Soft Pink */
+    --bg-light: #fffcf8;            /* Warm Off-White */
+    --card-bg: #ffffff;             /* Pure White */
+    --text-color: #333333;          /* Dark Charcoal */
+    --text-muted: #666666;          /* Muted Gray */
+    --border-color: #f0e6df;        /* Soft Border Color */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --transition-fast: 0.3s ease;
+}
+
+/* --- General Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header & Navigation Bar --- */
+.navbar {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.cart-summary {
+    background-color: #fdf2f4;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: 500;
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    cursor: pointer;
+}
+
+.cart-count {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    margin: 0 4px;
+}
+
+/* --- Hero Banner Section --- */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #e1bee7 100%);
+    padding: 6rem 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #4a2c3d;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    color: #5d4037;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-sm:hover {
+    background-color: #204030;
+}
+
+/* --- Category Filter Section --- */
+.filter-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.filter-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* --- Bouquet Grid & Cards Section --- */
+.bouquet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.card-img-wrapper {
+    height: 180px;
+    background: linear-gradient(180deg, #fff5f7 0%, #fbe3eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flower-emoji {
+    font-size: 5rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* --- About Us Section --- */
+.about-section {
+    background-color: #f4f8f5;
+    padding: 4rem 1rem;
+    margin-bottom: 4rem;
+    border-radius: var(--radius-lg);
+}
+
+.about-container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.features-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    font-weight: 600;
+    color: var(--secondary-color);
+    background: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    margin-bottom: 4rem;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+}
+
+.contact-info h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.info-item {
+    margin-bottom: 1.2rem;
+}
+
+.info-item strong {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.contact-form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+}
+
+.contact-form h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    display: none;
+}
+
+.success-message {
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 1px solid #ceead6;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.devops-note {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* --- Responsive Layout (Mobile / Tablet) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
